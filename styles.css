@@ -1,0 +1,292 @@
+
+/* IPL TICKET BOOKING WEBSITE */
+
+/* 1. CSS Variables */
+:root {
+    --primary: #071952;
+    --accent: #f5b400;
+    --background: #f4f6fa;
+    --text: #222;
+    --white: #ffffff;
+}
+
+/* 2. General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding-top: 110px;
+}
+
+section {
+    padding: 45px 7%;
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* 3. Navigation Bar */
+header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* 4. Hero Section */
+#home {
+    text-align: center;
+    padding: 90px 20px;
+    color: var(--white);
+    background: linear-gradient(135deg, #071952, #088395);
+}
+
+#home h2 {
+    color: var(--white);
+    font-size: 36px;
+}
+
+#home p {
+    margin: 15px 0 25px;
+}
+
+#home a {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#home a:hover {
+    background: var(--white);
+}
+
+/* 5. About IPL */
+#about {
+    background: var(--white);
+}
+
+#about ul {
+    margin: 10px 0 25px 25px;
+}
+
+#about li {
+    padding: 5px;
+}
+
+/* 6. Match Schedule Table */
+#matches {
+    background: var(--background);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--white);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+th {
+    background: var(--primary);
+    color: var(--white);
+    padding: 14px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background: #fff4d1;
+}
+
+table a {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Team Filter */
+#teamFilter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 7. Booking Section */
+#booking {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+#booking h2 {
+    grid-column: 1 / -1;
+}
+
+form, aside {
+    background: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+
+aside h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+aside p {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 8. My Bookings */
+#mybookings {
+    background: var(--background);
+}
+
+/* 9. Guidelines */
+#guidelines {
+    background: var(--white);
+}
+
+#guidelines article {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    margin: 1%;
+    padding: 25px;
+    background: var(--background);
+    border-radius: 10px;
+    border-left: 5px solid var(--accent);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+#guidelines article h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* 10. Footer */
+footer {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+/* 11. Responsive Design */
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 140px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    #home h2 {
+        font-size: 26px;
+    }
+
+    #booking {
+        grid-template-columns: 1fr;
+    }
+
+    #guidelines article {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    #matches {
+        overflow-x: auto;
+    }
+}
