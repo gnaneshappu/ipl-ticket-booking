@@ -9,17 +9,26 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <h1>IPL 2026 Ticket Booking</h1>
-        <nav>
-    <a href="#matches">Matches</a>
-    <a href="#booking">Book Ticket</a>
-    <a href="booking.html">Booking Form</a>
-    <a href="#mybookings">My Bookings</a>
-    <a href="#guidelines">Guidelines</a>
-</nav>
-    </header>
+    <!-- Responsive Navigation Bar -->
+<header class="main-header">
+
+    <h1>IPL 2026 Ticket Booking</h1>
+
+    <button class="menu-toggle" id="menuToggle"
+        type="button" aria-label="Toggle navigation"
+        aria-expanded="false">
+        ☰
+    </button>
+
+    <nav id="mainNav">
+        <a href="#matches">Matches</a>
+        <a href="#booking">Book Ticket</a>
+        <a href="booking.html">Booking Form</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </nav>
+
+</header>
 
     <!-- Hero Section -->
     <section id="home">
@@ -52,58 +61,52 @@
     </section>
 
     <!-- Match Schedule -->
-    <section id="matches">
-        <h2>Match Schedule</h2>
+<section id="matches">
 
-        <label for="teamFilter">Filter by Team:</label>
-        <select id="teamFilter">
-            <option value="all">All Teams</option>
-            <option>RCB</option>
-            <option>CSK</option>
-            <option>MI</option>
-            <option>KKR</option>
-        </select>
+    <h2>Match Schedule</h2>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Match Number</th>
-                    <th>Teams</th>
-                    <th>Date & Time</th>
-                    <th>Venue</th>
-                    <th>General</th>
-                    <th>Premium</th>
-                    <th>VIP</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+    <label for="teamFilter">Filter by Team:</label>
 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>RCB vs CSK</td>
-                    <td>Sample Date - 7:30 PM</td>
-                    <td>Bengaluru</td>
-                    <td>₹1000</td>
-                    <td>₹2500</td>
-                    <td>₹5000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
+    <select id="teamFilter">
+        <option value="all">All Teams</option>
+        <option value="RCB">RCB</option>
+        <option value="CSK">CSK</option>
+        <option value="MI">MI</option>
+        <option value="KKR">KKR</option>
+    </select>
 
-                <tr>
-                    <td>2</td>
-                    <td>MI vs KKR</td>
-                    <td>Sample Date - 7:30 PM</td>
-                    <td>Mumbai</td>
-                    <td>₹1200</td>
-                    <td>₹3000</td>
-                    <td>₹6000</td>
-                    <td><a href="#booking" class="book-btn">Book</a></td>
-                </tr>
-            </tbody>
-        </table>
-        <p>Note: Match details and prices above are sample data.</p>
-    </section>
+    <div class="view-controls">
+        <button id="gridView" type="button">Grid View</button>
+        <button id="listView" type="button">List View</button>
+    </div>
+
+    <div class="match-container" id="matchContainer">
+
+        <div class="match-card" data-teams="RCB CSK">
+            <h3>RCB vs CSK</h3>
+            <p>Date: Sample Date - 7:30 PM</p>
+            <p>Venue: Bengaluru</p>
+            <p>General: ₹1000</p>
+            <p>Premium: ₹2500</p>
+            <p>VIP: ₹5000</p>
+            <a href="#booking" class="book-btn">Book</a>
+        </div>
+
+        <div class="match-card" data-teams="MI KKR">
+            <h3>MI vs KKR</h3>
+            <p>Date: Sample Date - 7:30 PM</p>
+            <p>Venue: Mumbai</p>
+            <p>General: ₹1200</p>
+            <p>Premium: ₹3000</p>
+            <p>VIP: ₹6000</p>
+            <a href="#booking" class="book-btn">Book</a>
+        </div>
+
+    </div>
+
+    <p>Note: Match details and prices above are sample data.</p>
+
+</section>
 
     <!-- Ticket Booking Form -->
     <section id="booking">

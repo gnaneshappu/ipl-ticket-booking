@@ -99,3 +99,91 @@ document.getElementById("quantity").addEventListener("input", updateBookingSumma
 
 // Show initial summary
 updateBookingSummary();
+
+// Activity 8: Responsive Navigation, Team Filter and View Toggle
+
+// 1. Mobile Navigation
+const activity8MenuToggle = document.getElementById("menuToggle");
+const activity8MainNav = document.getElementById("mainNav");
+
+if (activity8MenuToggle && activity8MainNav) {
+
+    activity8MenuToggle.addEventListener("click", function () {
+        activity8MainNav.classList.toggle("active");
+
+        const isOpen = activity8MainNav.classList.contains("active");
+        activity8MenuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    activity8MainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            activity8MainNav.classList.remove("active");
+            activity8MenuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
+
+// 2. Filter Matches by Team
+const activity8TeamFilter = document.getElementById("teamFilter");
+const activity8MatchCards = document.querySelectorAll(".match-card");
+
+if (activity8TeamFilter) {
+
+    activity8TeamFilter.addEventListener("change", function () {
+
+        const selectedTeam = activity8TeamFilter.value;
+
+        activity8MatchCards.forEach(function (card) {
+
+            const teams = card.dataset.teams.split(" ");
+
+            if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+}
+
+
+// 3. Grid View and List View
+const activity8MatchContainer = document.getElementById("matchContainer");
+const activity8GridButton = document.getElementById("gridView");
+const activity8ListButton = document.getElementById("listView");
+
+if (activity8MatchContainer && activity8GridButton && activity8ListButton) {
+
+    activity8GridButton.addEventListener("click", function () {
+        activity8MatchContainer.classList.remove("list-view");
+    });
+
+    activity8ListButton.addEventListener("click", function () {
+        activity8MatchContainer.classList.add("list-view");
+    });
+
+}
+// Activity 8: Mobile Navigation
+
+const activity8MenuToggle = document.getElementById("menuToggle");
+const activity8MainNav = document.getElementById("mainNav");
+
+if (activity8MenuToggle && activity8MainNav) {
+
+    activity8MenuToggle.addEventListener("click", function () {
+        activity8MainNav.classList.toggle("active");
+
+        const isOpen = activity8MainNav.classList.contains("active");
+        activity8MenuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    activity8MainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            activity8MainNav.classList.remove("active");
+            activity8MenuToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
